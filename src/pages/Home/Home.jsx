@@ -7,7 +7,8 @@ function Home() {
   const { finalData } = useContext(MyContext)
   const navigate = useNavigate()
 
-  const sendForm = () => {
+  const sendForm = (event) => {
+    event.preventDefault()
     finalData({ city: 'bogota', country: 'co' })
     navigate('weather')
   }
@@ -25,16 +26,14 @@ function Home() {
             </article>
           </section>
           <section className='section-home__two'>
-            <form className='section-home__two--form'>
-              <label htmlFor='country'>
-                País
-              </label>
-                <input type='text' name='country' id='country' />
-              <label htmlFor='city'>
-                Ciudad
-              </label>
-                <input type='text' name='city' id='city' />
-              <button onClick={sendForm} className='section-home__two--button'>Enviar</button>
+            <form className='section-home__two--form' onSubmit={sendForm}>
+              <label htmlFor='country'>País</label>
+              <input type='text' name='country' id='country' required />
+              <label htmlFor='city'>Ciudad</label>
+              <input type='text' name='city' id='city' required />
+              <button className='section-home__two--button'>
+                Enviar
+              </button>
             </form>
           </section>
         </div>

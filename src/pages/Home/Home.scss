@@ -90,10 +90,10 @@
         background-color: $bg-light;
         border-radius: 5px;
         color: $bg-large;
-        padding-left:5px ;
+        padding-left: 5px;
       }
     }
-    &--button{
+    &--button {
       width: 100px;
       height: 30px;
       margin: 0 auto;
@@ -106,8 +106,56 @@
       color: $bg-large;
       cursor: pointer;
     }
-    &--button:hover{
-      background:$text-color;
+    &--button:hover {
+      background: $text-color;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .background-home {
+    &__medium {
+      background-color: $bg-large;
+    }
+    &__small {
+      flex-direction: row;
+      position: relative;
+    }
+    .section-home {
+      &__one {
+        width: 50%;
+        height: 80%;
+        position: absolute;
+        overflow: visible;
+        right: 0;
+        background-position: left;
+        background-size: contain;
+        z-index: 100;
+        &--bg {
+          width: 50%;
+          height: 30%;
+          position: absolute;
+          right: 30px;
+          top: 40%;
+          bottom: 50%;
+        }
+      }
+      &__two {
+        width: 60%;
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        &--form {
+          background-color: $bg-large;
+          position: relative;
+          label {
+            width: 85%;
+          }
+          input {
+            width: 85%;
+          }
+        }
+      }
     }
   }
 }
