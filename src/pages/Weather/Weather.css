@@ -119,6 +119,7 @@
   .weather__container {
     height: 100%; }
   .weather__information p {
+    width: 90%;
     font-size: 2.5rem; } }
 
 /*# sourceMappingURL=Weather.css.map */
