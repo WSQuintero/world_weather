@@ -108,18 +108,23 @@
     color: #34035E; }
 
 @media (min-width: 800px) {
+  .weather__flag {
+    width: 100%; }
   .weather__background {
     flex-direction: row;
     height: 100%; }
   .weather__image {
-    width: 45%; }
+    width: 40%; }
     .weather__image--bg {
       width: 250px;
       height: 250px; }
   .weather__container {
+    width: 70%;
     height: 100%; }
-  .weather__information p {
-    width: 90%;
-    font-size: 2.5rem; } }
+  .weather__information {
+    width: 100%; }
+    .weather__information p {
+      width: 90%;
+      font-size: 2.5rem; } }
 
 /*# sourceMappingURL=Weather.css.map */

@@ -122,21 +122,26 @@
 
 @media (min-width: 800px) {
   .weather {
+    &__flag {
+      width: 100%;
+    }
     &__background {
       flex-direction: row;
       height: 100%;
     }
     &__image {
-      width: 45%;
+      width: 40%;
       &--bg {
         width: 250px;
         height: 250px;
       }
     }
     &__container {
+      width: 70%;
       height: 100%;
     }
     &__information {
+      width: 100%;
       p {
         width: 90%;
         font-size: 2.5rem;
