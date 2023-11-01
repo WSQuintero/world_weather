@@ -19,8 +19,8 @@
     height: 30%;
     @include center-box;
     &--bg {
-      width: 50%;
-      height: 80%;
+      width: 200px;
+      height: 200px;
       background-color: $bg-small;
       border-radius: 100%;
       object-fit: contain;
