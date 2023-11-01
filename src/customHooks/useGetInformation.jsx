@@ -3,15 +3,18 @@ const apiKey = import.meta.env.VITE_APY_KEY
 import { useState } from 'react'
 
 function useGetInformation() {
-  const [data, setData] = useState({})
-  const [errorData, setErrorData] = useState({})
+  const [final, setFinal] = useState(undefined)
+  const [errorData, setErrorData] = useState(undefined)
 
   const finalData = async ({ city, country }) => {
+    setFinal(undefined)
+    setErrorData(undefined)
     const params = {
       q: `${city},${country}`,
-      appid: apiKey
+      appid: apiKey,
+      units: 'metric',
+      lang: 'es'
     }
-    // Realizar una solicitud GET usando Axios con la API key en el encabezado
 
     try {
       const request = await axios.get(
@@ -20,14 +23,13 @@ function useGetInformation() {
           params
         }
       )
-      const data = request.data
-      setData(data) // Trabaja con los datos aquí
+      setFinal(request.data)
     } catch (error) {
+      setFinal(undefined)
       setErrorData({ Error: error })
     }
   }
-
-  return { data, errorData, finalData }
+  return { final, finalData, errorData, setFinal, setErrorData }
 }
 
 export { useGetInformation }

@@ -4,10 +4,12 @@ import { useGetInformation } from '../customHooks/useGetInformation'
 const MyContext = createContext()
 
 function ContextProvider({ children }) {
-  const { data, errorData, finalData } = useGetInformation()
+  const { final, errorData, finalData, setFinal, setErrorData } =
+    useGetInformation()
 
   return (
-    <MyContext.Provider value={{ finalData, data, errorData }}>
+    <MyContext.Provider
+      value={{ finalData, final, errorData, setFinal, setErrorData }}>
       {children}
     </MyContext.Provider>
   )
