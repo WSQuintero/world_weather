@@ -12,7 +12,7 @@ function Home() {
     event.preventDefault()
     setFinal(undefined)
     setErrorData(undefined)
-    
+
     for (let i in countries) {
       if (
         i.toLocaleLowerCase() ===
